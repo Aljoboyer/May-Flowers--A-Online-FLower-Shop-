@@ -8,3 +8,4 @@ Visit May Flowers [May Flowers](https://may-flowers-307f4.web.app/)
   - clients can pay bill online 
   - Client can remove item from the cart
   - unauthorised user are not able to order flowers
+  - i used redux to manage the state
