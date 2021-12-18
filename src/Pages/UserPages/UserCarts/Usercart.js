@@ -42,7 +42,7 @@ const Usercart = () => {
     return (
         <div className='container-fluid'>
             <Usernavbars></Usernavbars>
-            <h1 className='fw-bold fs-1 my-4 text-center'>Your Cart</h1>
+            <h1 className='hometitle my-4 text-center'>Your Cart</h1>
             <Row className='justify-content-center'>
                 <Col lg={6} md={12} sm={12}>
                     {

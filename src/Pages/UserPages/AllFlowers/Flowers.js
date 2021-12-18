@@ -9,8 +9,8 @@ const Flowers = () => {
     useEffect(() => {
         dispatch(GetFlowers())
     },[dispatch])
-    const flowers = useSelector((state) => state.flowers.allflowers);
- 
+    const allflower = useSelector((state) => state.flowers.allflowers);
+    const flowers = allflower.slice(0,6)
     return (
         <Row className="justify-content-center gap-2 my-4">
             {

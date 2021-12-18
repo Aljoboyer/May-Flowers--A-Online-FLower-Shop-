@@ -17,6 +17,9 @@ const Usernavbars = () => {
     const NavigateHandler = (data) => {
       navigate('/allocassion', {state: data})
     }
+    const SeasonHandler = (data) => {
+      navigate('/seasonsCategory', {state: data})
+    }
     return (
         <Navbar collapseOnSelect expand="lg">
         <Container className="p-3">
@@ -25,9 +28,10 @@ const Usernavbars = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="">
             <Nav.Link as={Link} to="/" className="mx-2  navtext"> <span className="text-dark  fw-bold">Home</span> </Nav.Link>
-            <Nav.Link className="navtext " as={Link} to="/usercart"><span className="text-dark  fw-bold">Your Carts<i className="fas fa-shopping-cart"></i></span></Nav.Link>
-            <Nav.Link className="navtext mx-2" as={Link} to="/yourorders"><span className="text-dark  fw-bold">Your Orders</span></Nav.Link>
-            <Nav.Link className="navtext " as={Link} to="/dashboard">Dashboard</Nav.Link>
+            {
+              user.email && <> <Nav.Link className="navtext " as={Link} to="/usercart"><span className="text-dark  fw-bold">Your Carts<i className="fas fa-shopping-cart"></i></span></Nav.Link>
+              <Nav.Link className="navtext mx-2" as={Link} to="/yourorders"><span className="text-dark  fw-bold">Your Orders</span></Nav.Link></>
+            }
 
             <NavDropdown className="text-dark fw-bold" title="Ocassional Flowers" id="collasible-nav-dropdown">
               <NavDropdown.Item onClick={() => NavigateHandler('wedding')} >WEDDINGS</NavDropdown.Item>
@@ -36,13 +40,19 @@ const Usernavbars = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => NavigateHandler('birthday')}>BIRTHDAY</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={() => NavigateHandler('valentines')}>Separated link</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => NavigateHandler('valentines')}>VALENTINES</NavDropdown.Item>
+           </NavDropdown>
+
+           <NavDropdown className="text-dark fw-bold" title="Seasonal Flowers" id="collasible-nav-dropdown">
+              <NavDropdown.Item onClick={() => SeasonHandler('summer')} >SUMMER</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item onClick={() => SeasonHandler('spring')}  >SPRING</NavDropdown.Item>
            </NavDropdown>
           </Nav>
          
           <Nav className="ms-auto">
             {
-              user.email ? <button onClick={LogOutHandler} className='btn regularbtn fw-bold'>LogOut</button> : <Nav.Link as={Link} to="/login">Log-in</Nav.Link>
+              user.email ? <button onClick={LogOutHandler} className='btn regularbtn fw-bold'>LogOut</button> : <Nav.Link className="logins fw-bold fs-5 text-dark" as={Link} to="/login">Log-in</Nav.Link>
             }
           </Nav>
         </Navbar.Collapse>

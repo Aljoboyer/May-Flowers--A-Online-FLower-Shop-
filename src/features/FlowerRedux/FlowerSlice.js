@@ -6,7 +6,7 @@ export const GetFlowers = createAsyncThunk(
   'flowers/getflower',
   async () => {
 
-    const response = await fetch('http://localhost:5000/getflowers').then(res=> res.json())
+    const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/getflowers').then(res=> res.json())
     return  response
   }
 )
@@ -16,7 +16,7 @@ export const GetFlowerByid = createAsyncThunk(
   'flowers/getflowerbyid',
   async (id) => {
     
-    const response = await fetch(`http://localhost:5000/getflowerbyid/${id}`).then(res=> res.json())
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/getflowerbyid/${id}`).then(res=> res.json())
     return  response
   }
 )
@@ -25,7 +25,7 @@ export const GetFlowerByid = createAsyncThunk(
 export const PostFlower = createAsyncThunk(
   'flowers/postflower',
   async (fd) => {
-    const response = await fetch('http://localhost:5000/flowerpost',{
+    const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/flowerpost',{
       method: 'POST',
       body: fd 
     }).then(res=> res.json()).catch(error => {
@@ -44,7 +44,7 @@ export const AddToCart = createAsyncThunk(
   'flowers/addtocartflower',
   async (data) => {
     
-    const response = await fetch('http://localhost:5000/cartpost',{
+    const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/cartpost',{
       method: 'POST',
       headers:{
         'content-type':'application/json'
@@ -65,7 +65,7 @@ export const AddToCart = createAsyncThunk(
 export const GetCart = createAsyncThunk(
   'flowers/getcart',
   async (email) => {
-    const response = await fetch(`http://localhost:5000/getcart?email=${email}`).then(res=> res.json())
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/getcart?email=${email}`).then(res=> res.json())
     return  response
   }
 )
@@ -74,7 +74,7 @@ export const GetCart = createAsyncThunk(
 export     const ClearCart = createAsyncThunk(
   'flowers/clearcart',
   async (email) => {
-    const response = await fetch(`http://localhost:5000/clearcart?email=${email}`,{
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/clearcart?email=${email}`,{
       method: 'DELETE'
     }).then(res=> res.json())
     return  response
@@ -85,7 +85,7 @@ export     const ClearCart = createAsyncThunk(
 export const GetPymentdata= createAsyncThunk(
   'flowers/getpymentdata',
   async (email) => {
-    const response = await fetch(`http://localhost:5000/getpaymentdata?email=${email}`).then(res=> res.json())
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/getpaymentdata?email=${email}`).then(res=> res.json())
     return  response
   }
 )
@@ -94,7 +94,7 @@ export const GetPymentdata= createAsyncThunk(
 export const GetPymentstatus= createAsyncThunk(
   'flowers/getPymentstatus',
   async (email) => {
-    const response = await fetch(`http://localhost:5000/getpaymetstatus?email=${email}`).then(res=> res.json())
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/getpaymetstatus?email=${email}`).then(res=> res.json())
     return  response
   }
 )
@@ -103,7 +103,7 @@ export const GetPymentstatus= createAsyncThunk(
 export const DeleteCartItem= createAsyncThunk(
   'flowers/deletecartitems',
   async (id) => {
-    const response = await fetch(`http://localhost:5000/deletecartitem?id=${id}`,{
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/deletecartitem?id=${id}`,{
       method: 'DELETE'
     }).then(res=> res.json())
     return  response
@@ -114,7 +114,7 @@ export const DeleteCartItem= createAsyncThunk(
 export const MakingAdmin= createAsyncThunk(
   'flowers/makingadmin',
   async (email) => {
-    const response = await fetch(`http://localhost:5000/makingadmin?email=${email}`,{
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/makingadmin?email=${email}`,{
       method: 'PUT',
     }).then(res=> res.json())
     return  response
@@ -125,7 +125,7 @@ export const MakingAdmin= createAsyncThunk(
 export const AdminDeleteFlower= createAsyncThunk(
   'flowers/adminDeleteFlower',
   async (id) => {
-    const response = await fetch(`http://localhost:5000/admindeleteflower/${id}`,{
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/admindeleteflower/${id}`,{
       method: 'DELETE'
   })
   .then(res => res.json())
@@ -138,7 +138,7 @@ export const GetOrders = createAsyncThunk(
   'flowers/getOrders',
   async () => {
     console.log('hitted')
-    const response = await fetch('http://localhost:5000/getorders').then(res=> res.json())
+    const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/getorders').then(res=> res.json())
     return  response
   }
 )      
@@ -148,10 +148,21 @@ export const OcassionalFlower = createAsyncThunk(
   'flowers/getOcassionalFlower',
   async (ocassion) => {
     console.log('hitted')
-    const response = await fetch(`http://localhost:5000/ocassionalflower?ocassion=${ocassion}`).then(res=> res.json())
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/ocassionalflower?ocassion=${ocassion}`).then(res=> res.json())
+    return  response
+  }
+)
+
+//getting seasonal and category flowers
+export const SeasonalCategory = createAsyncThunk(
+  'flowers/seasonalcategory',
+  async (season) => {
+    console.log('hitted')
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/seasonalcategory?season=${season}`).then(res=> res.json())
     return  response
   }
 )      
+
 
 export const FlowerSlice = createSlice({
   name: 'Flowers',
@@ -244,6 +255,9 @@ export const FlowerSlice = createSlice({
       state.orders = action.payload
     })
     builder.addCase(OcassionalFlower.fulfilled, (state, action) => {
+      state.ocassions = action.payload
+    })
+    builder.addCase(SeasonalCategory.fulfilled, (state, action) => {
       state.ocassions = action.payload
     })
   }

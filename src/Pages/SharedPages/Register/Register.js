@@ -32,9 +32,10 @@ const Register = () => {
     return (
         <div className="container-fluid">
         <Usernavbars></Usernavbars>
-         <Row className="algin-items-center justify-content-center login">
-            <Col lg={7} sm={12} md={8} className="loginform my-4 p-4">
-            <h3 className="my-4 fw-bold">Create Account To <h2 className="text-info fw-bold">May Flowers</h2></h3>
+         <Row className="algin-items-center justify-content-center ">
+            <Col lg={7} sm={12} md={8} className="login my-4 p-4">
+            <h3 className="my-4 hometitle">Create Account To 
+            <span className="springtxt fw-bold">May Flowers</span> </h3>
             <h5 className="text-danger fw-bold">{regerror}</h5>
                 <form onSubmit={SubmitHanlder}>
                 <Form.Floating className="mb-3 fw-bold text-primary">
@@ -87,7 +88,7 @@ const Register = () => {
                     <label htmlFor="floatingPasswordCustom">Re Enter Password Your Password</label>
                 </Form.Floating>
             <p className="text-danger fw-bold">{mathcerror}</p>
-            <button type="submit" className="btn btn-info fw-bold rounded my-3" >Register</button>
+            <button type="submit" className="btn regularbtn fw-bold rounded my-3" >Register</button>
                 </form>
                 <Link className="fw-bold text-info fs-6" to="/login">Are You Already Rgister? please Login</Link>
             </Col>

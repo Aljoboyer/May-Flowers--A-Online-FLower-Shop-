@@ -20,6 +20,9 @@ import Makeadmin from './Pages/Adminpages/Makeadmin/Makeadmin';
 import Addflower from './Pages/Adminpages/Addflower/Addflower';
 import Footer from './Pages/UserPages/Footer/Footer';
 import Allocassion from './Pages/UserPages/Ocassion/Allocassion'
+import SeasonsCategory from './Pages/UserPages/SeasonalFlwoers/SeasonAndCategory/Seasoncategory';
+import Privateroute from './Pages/Privateroute/Privateroute';
+
 function App() {
   return (
     <div className="container-fluid">
@@ -27,7 +30,7 @@ function App() {
             <Routes>
                <Route path="/" element={<Homepage/>} />
                <Route path="/addflower" element={<Addflower/>} />
-               <Route path="/details/:id" element={<Details/>} />
+               <Route path="/details/:id" element={<Privateroute><Details/></Privateroute>} />
                <Route path="/usercart" element={<Usercart/>} />
                <Route path="/login" element={<Login/>} />
                <Route path="/register" element={<Register/>} />
@@ -40,6 +43,7 @@ function App() {
                   <Route path="/dashboard/addflower" element={<Addflower/>}/>
                </Route>
                <Route path="/allocassion" element={<Allocassion/>}/>
+               <Route path="/seasonsCategory" element={<SeasonsCategory/>}/>
             </Routes>
             <Footer></Footer>
           </BrowserRouter>

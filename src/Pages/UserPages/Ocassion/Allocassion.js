@@ -9,6 +9,8 @@ import { OcassionalFlower } from '../../../features/FlowerRedux/FlowerSlice';
 import Ocassion from './Ocassion';
 import Anniversary from './Anniversary/Anniversary';
 import Birthday from './Birthday/Birthday';
+import Valentines from './Valentines/Valentines';
+import Spring from '../SeasonalFlwoers/Spring/Spring';
 
 const Allocassion = () => {
     const {state} = useLocation();
@@ -17,20 +19,20 @@ const Allocassion = () => {
         dispatch(OcassionalFlower(state))
     }, [dispatch, state]);
     const ocassions = useSelector((states) => states.flowers.ocassions )
-    console.log('this is ocassion',ocassions, state)
+
     return (
         <div className='container-fluid'>
             <Usernavbars></Usernavbars>
             {state === 'wedding' && <Wedding></Wedding>}
             {state === 'anniversary' && <Anniversary></Anniversary>}
             {state === 'birthday' && <Birthday></Birthday>}
-                <Row className="justify-content-center">
-                    {
-                        ocassions.map(ocassion => <Ocassion key={ocassion._id} ocassion={ocassion}></Ocassion>)
-                    }
-                </Row>
+            {state === 'valentines' && <Valentines></Valentines>}
             
-            
+            <Row className="justify-content-center">
+                {
+                    ocassions.map(ocassion => <Ocassion key={ocassion._id} ocassion={ocassion}></Ocassion>)
+                }
+            </Row>  
         </div>
     );
 };

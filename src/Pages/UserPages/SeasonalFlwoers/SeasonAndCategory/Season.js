@@ -2,9 +2,8 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Ocassion = ({ocassion}) => {
-    const {_id,img, flowername, short, flowerprice} = ocassion
-
+const Season = ({flower}) => {
+    const {_id,img, flowername, short, flowerprice} = flower
     return (
         <Col lg={4} md={6} sm={12}>
         <Card>
@@ -25,4 +24,4 @@ const Ocassion = ({ocassion}) => {
     );
 };
 
-export default Ocassion;
+export default Season;

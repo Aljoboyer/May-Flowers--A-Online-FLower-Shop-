@@ -25,7 +25,7 @@ const Checkoutform = ({carts, totalflower, totalamount}) => {
     }
 
      useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent',{
+        fetch('https://sheltered-beyond-34155.herokuapp.com/create-payment-intent',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -110,7 +110,7 @@ const Checkoutform = ({carts, totalflower, totalamount}) => {
              }
              
              //saving payment history database
-             fetch('http://localhost:5000/addpayments',{
+             fetch('https://sheltered-beyond-34155.herokuapp.com/addpayments',{
                 method: 'POST',
                 headers: {
                     'content-type':'application/json'
@@ -120,7 +120,7 @@ const Checkoutform = ({carts, totalflower, totalamount}) => {
              .then(res => res.json())
              .then(data => console.log(data))
              //saving payment status database
-             fetch('http://localhost:5000/paymentstatus',{
+             fetch('https://sheltered-beyond-34155.herokuapp.com/paymentstatus',{
                 method: 'POST',
                 headers: {
                     'content-type':'application/json'

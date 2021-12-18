@@ -16,7 +16,7 @@ const Flower = ({flower}) => {
           </Card.Text>
             </Card.Body>
         <Card.Footer>
-            <Link to={`/details/${_id}`}><button className='btn btn-warning fw-bold text-dark'>Order Now</button>
+            <Link to={`/details/${_id}`}><button className='btn regularbtn  fw-bold text-light'>Order Now</button>
             </Link>
         </Card.Footer>
             </Card>

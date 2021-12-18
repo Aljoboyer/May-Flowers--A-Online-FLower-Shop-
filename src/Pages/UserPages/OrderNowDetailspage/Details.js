@@ -49,7 +49,7 @@ const Details = () => {
         <div className="container-fluid">
             <Usernavbars></Usernavbars>
             <Row className="justify-content-center">
-                <h1 className='text-center fw-bold my-4'>Flowers Details</h1>
+                <h1 className='text-center hometitle my-4'>Flowers Details</h1>
                 <Col lg={7} md={6} sm={12}>
                     <Row className="justify-content-center">
                         <Col lg={6} md={12} sm={12}>

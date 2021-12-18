@@ -26,7 +26,30 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+}
+.valentinesrow{
+    background-image: url('../../../asset/valentinebg.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
+.Springrow{
+    background-image: url('../../../asset/spring.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
+.springtxt{
+    color: #710a20;;
+}
+.Summerrow{
+    background-image: url('../../../asset/summerbg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
 }
 @media only screen and (max-width:688px) {
     .weddingtitle{
