@@ -1,0 +1,13 @@
+.navss{
+    border: 3px solid #710a20;
+}
+.spans{
+    color: #710a20;
+}
+.adminhomerow{
+    background-image: url('../../asset/adminhome.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}

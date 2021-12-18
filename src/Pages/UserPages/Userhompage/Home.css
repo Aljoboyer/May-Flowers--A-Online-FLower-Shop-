@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+.hometitle{
+    font-size: 60px;
+    font-family: 'Charm', cursive;
+    font-weight: 700;
+    word-spacing: 2px;
+
+}
+.homerow{
+    background-image: url('../../../asset/home-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 70vh;
+}
+.homecolam{
+    height: 420px;
+    width: 550px;
+    background-color: white;
+}
+.hometoprow{
+    background-color: #144b3c;
+}
+.regularbtn{
+    background-color: #0a7256;
+    color: white;
+}
+.hometoptxt{
+    font-size: 20px;
+}
+.undersixty{
+    background-color: white;
+    width: 500px;
+    height: 400px;
+}
+.undersixtycolam{
+    background-color: #710a20;
+}
+.regtext{
+    font-family: 'Charm', cursive;
+}
+.subscriprow{
+    background-image: url('../../../asset/subscription.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.subscolam{
+    height: 300px;
+    width: 400px;
+    background-color: white;
+}
+/*  */
+@media only screen and (max-width:688px) {
+    .homerow{
+        background-image: url('../../../asset/home-bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 85vh;
+    }
+    .homecolam{
+        height: 450px;
+        width: 550px;
+        background-color: white;
+    }
+    .hometoptxt{
+        font-size: 15px;
+    }
+    .hometitle{
+        font-size: 50px;
+        font-family: 'Charm', cursive;
+        font-weight: 700;
+        word-spacing: 2px;
+    
+    }
+    .undersixty{
+        background-color: white;
+        width: 500px;
+        height: 450px;
+    }
+}

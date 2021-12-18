@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import FlowerReducers from '../features/FlowerRedux/FlowerSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    flowers: FlowerReducers,
   },
 });
