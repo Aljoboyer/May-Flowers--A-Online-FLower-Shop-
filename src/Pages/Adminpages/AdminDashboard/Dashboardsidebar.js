@@ -12,12 +12,12 @@ const Dashboardsidebar = () => {
     }
     return (
     <ListGroup>
-        <ListGroup.Item action variant="success" onClick={LogoutHandler}>Log Out</ListGroup.Item>
-        <ListGroup.Item as={Link} to="/dashboard">Home</ListGroup.Item>
-        <ListGroup.Item as={Link} to="/dashboard/makeadmin" action variant="secondary">Make Admin</ListGroup.Item>
-        <ListGroup.Item as={Link} to="/dashboard/manageflower" action variant="success">Manage Flower</ListGroup.Item>
-        <ListGroup.Item as={Link} to="/dashboard/addflower" action variant="success">Add Flower</ListGroup.Item>
-        <ListGroup.Item as={Link} to="/dashboard/manageorders" action variant="success">Manage Orders</ListGroup.Item>
+        <ListGroup.Item className="adminside" action  onClick={LogoutHandler}> <h5 className="fw-bold text-success">Log Out</h5> </ListGroup.Item>
+        <ListGroup.Item action as={Link} className="my-2 adminside" to="/dashboard"> <h5 className=" fw-bold">Home</h5> </ListGroup.Item>
+        <ListGroup.Item as={Link} className="my-2 adminside" to="/dashboard/makeadmin" action > <h5 className=" fw-bold">Make Admin</h5> </ListGroup.Item>
+        <ListGroup.Item as={Link} className="my-2 adminside" to="/dashboard/manageflower" action ><h5 className=" fw-bold">Manage Flower</h5></ListGroup.Item>
+        <ListGroup.Item as={Link} className="my-2 adminside" to="/dashboard/addflower" action ><h5 className=" fw-bold">Add Flower</h5></ListGroup.Item>
+        <ListGroup.Item as={Link} className="my-2 adminside" to="/dashboard/manageorders" action ><h5 className=" fw-bold">Manage Orders</h5></ListGroup.Item>
   </ListGroup>
     );
 };

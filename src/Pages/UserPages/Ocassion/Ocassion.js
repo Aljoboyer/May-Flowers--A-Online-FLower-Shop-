@@ -10,7 +10,7 @@ const Ocassion = ({ocassion}) => {
         <Card>
         <Card.Img variant="top" src={`data:image/jpeg;base64,${img}`} />
          <Card.Body>
-      <Card.Title>{flowername}</Card.Title>
+      <Card.Title className='regtext fs-4 fw-bold'>{flowername}</Card.Title>
       <Card.Text>
         <p><b>$ {flowerprice}</b></p>
         {short}

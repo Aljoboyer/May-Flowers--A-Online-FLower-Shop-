@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Flower = ({flower}) => {
+const LTsixty = ({flower}) => {
     const {_id,img, flowername, short, flowerprice} = flower
     return (
        
@@ -24,4 +24,4 @@ const Flower = ({flower}) => {
     );
 };
 
-export default Flower;
+export default LTsixty;

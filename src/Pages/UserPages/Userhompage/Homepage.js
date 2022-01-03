@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row , Col} from 'react-bootstrap';
 import Flowers from '../AllFlowers/Flowers';
+import Displaymoments from '../Displaymoments/Displaymoments';
+import Landaues from '../Landaues/Landaues';
 import Usernavbars from '../Usernavbars/Usernavbars';
 import FLowersubscription from './FLowersubscription/FLowersubscription';
 import './Home.css'
@@ -26,6 +28,8 @@ const Homepage = () => {
             <FLowersubscription></FLowersubscription>
             <Flowers></Flowers>
             <Undersixty></Undersixty>
+            <Landaues></Landaues>
+            <Displaymoments></Displaymoments>
         </div>
     );
 };

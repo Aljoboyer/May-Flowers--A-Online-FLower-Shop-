@@ -17,6 +17,9 @@
     "react-redux": "^7.2.3",
     "react-router-dom": "6",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
+    "redux-persist": "^6.0.0",
+    "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.3.0"
   },
   "scripts": {

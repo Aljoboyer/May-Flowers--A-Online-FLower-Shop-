@@ -42,7 +42,7 @@
     height: 350px;
 }
 .springtxt{
-    color: #710a20;;
+    color: #710a20;
 }
 .Summerrow{
     background-image: url('../../../asset/summerbg.jpg');
@@ -50,6 +50,34 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 350px;
+}
+.categorybtn{
+    border: solid #710a20 4px;
+    color: #144b3c;
+}
+.annversaryqutesrow{
+    background-image: url('../../../asset/anniversaryqutes.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.birthdayqutesrow{
+    background-image: url('../../../asset/birthdayqutes.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.valentinesqutesrow{
+    background-image: url('../../../asset/valentinequtes.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.weddingqutesrow{
+    background-image: url('../../../asset/weddingqutes.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 @media only screen and (max-width:688px) {
     .weddingtitle{

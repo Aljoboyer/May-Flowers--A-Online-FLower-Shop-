@@ -3,7 +3,8 @@ import { Col, Row } from 'react-bootstrap';
 import './Footer.css' 
 const Footer = () => {
     return (
-        <Row className='justify-content-center g-3 footerrow p-4'>
+        <div className='container-fluid'>
+                <Row className='justify-content-center g-3 footerrow p-4'>
             <Col lg={3} md={6} sm={12}>
                 <h5>THE MAY FLOWERS CO.</h5>
                 <p>About Us</p>
@@ -40,6 +41,7 @@ const Footer = () => {
                 <p>Do Not Sell My Information</p>
             </Col>
         </Row>
+        </div>
     );
 };
 

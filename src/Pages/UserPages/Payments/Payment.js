@@ -7,7 +7,6 @@ import { Elements } from '@stripe/react-stripe-js';
 const stripePromise =  loadStripe('pk_test_51Jw2mpBSwbB9BMbhsyE9VsMWMbgeGoz35VdXDYoB2C1QGFkx7JTaEG4FFXG3pyBkqupeooBX2z3nPu0zERZuO1Tw00ZtAW0Wtx');
 
 const Payment = ({carts, totalflower, totalamount}) => {
-    console.log('from payment', )
     return (
        <Row>
            <Elements  stripe={stripePromise}>

@@ -6,7 +6,7 @@ import useFirebase from '../FirebaseAuthentication/Firebaseauth';
 
 const Register = () => {
     const [formdata, setFormdata] = useState({});
-    const {RegisterUser, user,regerror} = useFirebase();
+    const {RegisterUser, user,regerror, GoogleSignIn} = useFirebase();
     const [mathcerror, setMatcherror] = useState('')
     const navigate = useNavigate();
 
@@ -28,6 +28,9 @@ const Register = () => {
         else{
             setMatcherror('Your Password is Not Matched')
         }
+    }
+    const GoogleHandler = () => {
+        GoogleSignIn(navigate)
     }
     return (
         <div className="container-fluid">
@@ -89,8 +92,10 @@ const Register = () => {
                 </Form.Floating>
             <p className="text-danger fw-bold">{mathcerror}</p>
             <button type="submit" className="btn regularbtn fw-bold rounded my-3" >Register</button>
+            <h4 className='fw-bold'>OR</h4>
+                <p className='springtxt fw-bold my-4'>sign-up with <i onClick={GoogleHandler} className="fab fa-google fa-2x"></i></p>
                 </form>
-                <Link className="fw-bold text-info fs-6" to="/login">Are You Already Rgister? please Login</Link>
+                <Link className="fw-bold springtxt fs-6" to="/login">Are You Already Rgister? please Login</Link>
             </Col>
         </Row>
     </div>

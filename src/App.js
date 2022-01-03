@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect , useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -22,10 +22,26 @@ import Footer from './Pages/UserPages/Footer/Footer';
 import Allocassion from './Pages/UserPages/Ocassion/Allocassion'
 import SeasonsCategory from './Pages/UserPages/SeasonalFlwoers/SeasonAndCategory/Seasoncategory';
 import Privateroute from './Pages/Privateroute/Privateroute';
+import Lessthensixty from './Pages/UserPages/Userhompage/Under60/Lessthensixty';
+import Sharemoments from './Pages/UserPages/Sharemoments/Sharemoments';
 
 function App() {
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
+  },[])
+
   return (
-    <div className="container-fluid">
+      <>
+        {
+          loading ? <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div> : <div className="container-fluid">
           <BrowserRouter>
             <Routes>
                <Route path="/" element={<Homepage/>} />
@@ -44,10 +60,14 @@ function App() {
                </Route>
                <Route path="/allocassion" element={<Allocassion/>}/>
                <Route path="/seasonsCategory" element={<SeasonsCategory/>}/>
+               <Route path="/lessthensixty" element={<Lessthensixty/>}/>
+               <Route path="/sharemoments" element={<Sharemoments/>}/>
             </Routes>
             <Footer></Footer>
           </BrowserRouter>
     </div>
+        }
+      </>
   );
 }
 

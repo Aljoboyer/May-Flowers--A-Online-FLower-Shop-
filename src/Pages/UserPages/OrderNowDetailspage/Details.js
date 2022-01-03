@@ -2,9 +2,10 @@ import React, { useEffect , useState} from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { AddToCart, ClearCartData, decrement, GetCart, GetFlowerByid, increment} from '../../../features/FlowerRedux/FlowerSlice';
+import { AddToCart, ClearCartData, decrement, GetFlowerByid, increment} from '../../../features/FlowerRedux/FlowerSlice';
 import useFirebase from '../../SharedPages/FirebaseAuthentication/Firebaseauth';
 import Usernavbars from '../Usernavbars/Usernavbars';
+import Detailsslider from './DetailsSlider/Detailsslider';
 
 const Details = () => {
     const {user} = useFirebase()
@@ -60,14 +61,15 @@ const Details = () => {
                         </Col>
                     </Row>
                     <Row>
-                        <h4 className="my-4">{flower.flowername}</h4>
+                        <h4 className="my-4 regtext">{flower.flowername}</h4>
                         <h6><b>$ {flower.flowerprice}</b></h6>
                         <p>{flower.short}</p>
                         <p>{flower.flowerdetails}</p>
                     </Row>
                 </Col>
                 {
-                    flower.img && <Col lg={4} md={6} sm={12}>
+                    flower.img ? <Col className='' lg={4} md={6} sm={12}>
+                    <Row className='login p-4'>
                     <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label className="fw-bold">Choose Your Delivery Date</Form.Label>
                     <Form.Control onBlur={DateBlurHandler} name="deliverydate"  type="date"  />
@@ -104,10 +106,14 @@ const Details = () => {
                     <hr />
                     <h5><i onClick={() => dispatch(increment(parseInt(flower.flowerprice)))} className="fas fa-plus fa-2x mx-2"></i> <span>{floweramount}</span>
                     <i onClick={() => dispatch(decrement(parseInt(flower.flowerprice)))} className="far fa-minus-square fa-2x mx-2"></i></h5>
-                    <button onClick={AddtocartHandler} className='btn btn-dark text-warning my-2'>Add To Cart</button>
+                    <button onClick={AddtocartHandler} className='btn regularbtn text-light fw-bold mt-4'>Add To Cart</button>
+                    </Row>
                 </Col>
+                : <div className="spinner"></div>
                 }
             </Row>
+
+            <Detailsslider></Detailsslider>
         </div>
     );
 };

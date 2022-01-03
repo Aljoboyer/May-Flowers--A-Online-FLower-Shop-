@@ -5,7 +5,7 @@ import { Col, Row , Form} from 'react-bootstrap';
 import useFirebase from '../../SharedPages/FirebaseAuthentication/Firebaseauth';
 import { useDispatch } from 'react-redux';
 import { ClearCart } from '../../../features/FlowerRedux/FlowerSlice';
-
+ 
 const Checkoutform = ({carts, totalflower, totalamount}) => {
     const [formdata, setFormdata] = useState({});
     const stripe = useStripe()
@@ -139,9 +139,13 @@ const Checkoutform = ({carts, totalflower, totalamount}) => {
             <Row className="d-flex justify-content-center align-items-center p-4"> 
                 <Col lg={8} md={10} sm={12} className=" checkoutforms p-4 rounded">
                 <Row>
+                <h4 className="my-2">Total FLower: <b>{totalflower}</b> </h4>
+                <hr />
+                <h4 className="my-2">Total Amount: <b>$ {totalamount}</b> </h4>
+                <hr />
                 <Form.Floating className="mb-3 fw-bold text-primary">
                 <Form.Control
-                className="w-75"
+                className="w-100"
                 id="floatingInputCustom"
                 type="text"
                 name="username"
@@ -156,7 +160,7 @@ const Checkoutform = ({carts, totalflower, totalamount}) => {
                 <Form.Control
                 disabled
                 defaultValue={user.email}
-                className="w-75"
+                className="w-100"
                 id="floatingInputCustom"
                 type="email"
                 name="email"
@@ -167,7 +171,7 @@ const Checkoutform = ({carts, totalflower, totalamount}) => {
                  </Form.Floating>
 
                 <Form.Floating className="mb-3 fw-bold text-primary">
-                    <Form.Control className="w-75"
+                    <Form.Control className="w-100"
                     id="floatingPasswordCustom"
                     type="number"
                     name="phone"
@@ -198,7 +202,7 @@ const Checkoutform = ({carts, totalflower, totalamount}) => {
                     }}
                 />
                 {
-                    porcessing ? <p className="fw-bold text-primary">Processing...</p> :       <button className="btn btn-dark text-warning my-4" type="submit" disabled={!stripe || success}>
+                    porcessing ? <p className="fw-bold text-primary">Processing...</p> :       <button className="btn regularbtn text-light fw-bold my-4" type="submit" disabled={!stripe || success}>
                     Checkout
                   </button>
                 }

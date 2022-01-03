@@ -6,7 +6,7 @@ import useFirebase from '../FirebaseAuthentication/Firebaseauth';
 import '../Shared.css'
 const Login = () => {
     const [formdata, setFormdata] = useState({});
-    const {LoginUser, logerror} = useFirebase();
+    const {LoginUser, logerror, GoogleSignIn} = useFirebase();
 
     const location = useLocation()
     const navigate = useNavigate();
@@ -23,6 +23,9 @@ const Login = () => {
     const SubmitHanlder = (e) => {
         e.preventDefault()
         LoginUser(formdata.email, formdata.password, navigate, location)
+    }
+    const GoogleHandler = () => {
+        GoogleSignIn(navigate)
     }
     return (
         <div className="container-fluid">
@@ -57,7 +60,8 @@ const Login = () => {
             </Form.Floating>
             <button type="submit" className="btn regularbtn text-light p-3 fw-bold rounded my-3" >Login</button>
                 </form>
-
+                <h4 className='fw-bold'>OR</h4>
+                <p className='springtxt fw-bold my-4'>sign in with <i onClick={GoogleHandler} className="fab fa-google fa-2x"></i></p>
                 <Link className="fw-bold springtxt fs-6" to="/register">Are New Here ? Register Please</Link>
             </Col>
         </Row>

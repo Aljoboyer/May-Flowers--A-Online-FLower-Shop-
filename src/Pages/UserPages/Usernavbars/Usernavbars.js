@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom'
 import useFirebase from '../../SharedPages/FirebaseAuthentication/Firebaseauth';
 import './navs.css';
@@ -12,7 +12,7 @@ const Usernavbars = () => {
     const LogOutHandler = () => {
       LogOutUser(navigate)
     };
-    // const cart = useSelector((state) => state.flowers.usercarts);
+    const cart = useSelector((state) => state.flowers.usercarts);
 
     const NavigateHandler = (data) => {
       navigate('/allocassion', {state: data})
@@ -27,10 +27,10 @@ const Usernavbars = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="">
-            <Nav.Link as={Link} to="/" className="mx-2  navtext"> <span className="text-dark  fw-bold">Home</span> </Nav.Link>
+            <Nav.Link as={Link} to="/" className="  navtext"> <span className="text-dark  fw-bold">Home</span> </Nav.Link>
             {
-              user.email && <> <Nav.Link className="navtext " as={Link} to="/usercart"><span className="text-dark  fw-bold">Your Carts<i className="fas fa-shopping-cart"></i></span></Nav.Link>
-              <Nav.Link className="navtext mx-2" as={Link} to="/yourorders"><span className="text-dark  fw-bold">Your Orders</span></Nav.Link></>
+              user.email && <> <Nav.Link className="navtext " as={Link} to="/usercart"><span className="text-dark  fw-bold">Flower Carts {cart.length}<i className="fas fa-shopping-cart"></i></span></Nav.Link>
+              <Nav.Link className="navtext " as={Link} to="/yourorders"><span className="text-dark  fw-bold">Your Orders</span></Nav.Link></>
             }
 
             <NavDropdown className="text-dark fw-bold" title="Ocassional Flowers" id="collasible-nav-dropdown">
@@ -48,6 +48,9 @@ const Usernavbars = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => SeasonHandler('spring')}  >SPRING</NavDropdown.Item>
            </NavDropdown>
+           {
+             user.email && <Nav.Link as={Link} to="/sharemoments" className=" navtext"> <span className="text-dark  fw-bold">Share Happy Moments</span> </Nav.Link>
+           }
           </Nav>
          
           <Nav className="ms-auto">

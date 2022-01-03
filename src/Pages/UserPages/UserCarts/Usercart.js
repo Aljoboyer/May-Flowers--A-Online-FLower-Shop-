@@ -8,6 +8,8 @@ import useFirebase from '../../SharedPages/FirebaseAuthentication/Firebaseauth';
 import Payment from '../Payments/Payment';
 import Usernavbars from '../Usernavbars/Usernavbars';
 import Cart from './Cart';
+import './Usecart.css';
+
 const Usercart = () => {
     const {user} = useFirebase()
     const dispatch = useDispatch();
@@ -44,16 +46,18 @@ const Usercart = () => {
             <Usernavbars></Usernavbars>
             <h1 className='hometitle my-4 text-center'>Your Cart</h1>
             <Row className='justify-content-center'>
-                <Col lg={6} md={12} sm={12}>
+                <Col className="" lg={6} md={12} sm={12}>
                     {
                         carts?.map(flower => <Cart key={flower._id}
                             DeleteHandler={DeleteHandler} flower={flower}></Cart>)
                     }
                 </Col>
-                <Col lg={6} md={12} sm={12}>
+                <Col  lg={6} md={12} sm={12}>
+                    <Row >
                     {
                         totalamount > 0 && <Payment carts={carts} totalflower={totalflower} totalamount={totalamount}></Payment>
                     }
+                    </Row>
                 </Col>
             </Row>
         </div>

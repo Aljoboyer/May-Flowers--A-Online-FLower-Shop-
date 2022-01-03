@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword , signOut ,onAuthStateChanged} from "firebase/auth";
+import {updateProfile, signInWithPopup, GoogleAuthProvider , getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword , signOut ,onAuthStateChanged} from "firebase/auth";
 import InitializationApp from '../../../FirebaseSetup/Firebaseinit';
 import Swal from "sweetalert2";
 
@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [logerror, setLogerror] = useState('')
     const auth = getAuth();
     const [isloading, setIsloading] = useState(true);
+    const googleprovider = new GoogleAuthProvider();
 
 
     //Register user 
@@ -28,7 +29,15 @@ const useFirebase = () => {
                 'success'
               )
             //saving user to database
-            SaveUser(email, name)
+            SaveUser(email, name);
+            //updating user to firebase
+            updateProfile(auth.currentUser, {
+                displayName: name, 
+              }).then(() => {
+
+              }).catch((error) => {
+         
+              });
         })
         .catch((error) => {
             setRegerror(error.message)
@@ -61,6 +70,17 @@ const useFirebase = () => {
                 setLogerror(error.message)
             })
        })
+    }
+
+    const GoogleSignIn = (navigate) => {
+        signInWithPopup(auth, googleprovider)
+        .then((result) => {
+            const user = result.user;
+            setUser(user);
+            navigate('/')
+        }).catch((error) => {
+                console.log(error.message)
+        });
     }
 
     //currently sign in user
@@ -110,7 +130,8 @@ const useFirebase = () => {
         regerror,
         logerror,
         SaveUser,
-        isloading
+        isloading,
+        GoogleSignIn
     }
 };
 

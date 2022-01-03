@@ -19,6 +19,7 @@ const Yourorders = () => {
     return (
         <div className='container-fluid'>
             <Usernavbars></Usernavbars>
+            <h1 className='hometitle my-4 text-center'>Your Order</h1>
             <div className='container'>
                 <Row>
                    <Col lg={7} md={6} sm={12}>

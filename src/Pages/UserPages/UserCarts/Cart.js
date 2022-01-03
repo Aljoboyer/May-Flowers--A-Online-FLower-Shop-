@@ -14,7 +14,7 @@ const Cart = ({flower, DeleteHandler}) => {
              <h5>Flower Ordered: {flower.floweramount}</h5>
              <h5 className="my-4">Amount: {flower.singletotal}</h5>
              <h5 className="my-4">Delivery Date: {flower.deliverydate}</h5>
-             <button onClick={() => DeleteHandler(flower._id)} className='btn btn-dark text-warning'>Remove</button>
+             <button onClick={() => DeleteHandler(flower._id)} className='btn regularbtn text-light fw-bold'>Remove</button>
              </Row>
          </Col> 
 

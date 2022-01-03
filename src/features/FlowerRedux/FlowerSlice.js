@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 export const GetFlowers = createAsyncThunk(
   'flowers/getflower',
   async () => {
-
     const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/getflowers').then(res=> res.json())
     return  response
   }
@@ -147,7 +146,6 @@ export const GetOrders = createAsyncThunk(
 export const OcassionalFlower = createAsyncThunk(
   'flowers/getOcassionalFlower',
   async (ocassion) => {
-    console.log('hitted')
     const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/ocassionalflower?ocassion=${ocassion}`).then(res=> res.json())
     return  response
   }
@@ -162,7 +160,38 @@ export const SeasonalCategory = createAsyncThunk(
     return  response
   }
 )      
+//getting GetFlowersLTSixty flowers
+export const GetFlowersLTSixty = createAsyncThunk(
+  'flowers/getFlowersLTSixty',
+  async () => {
+    console.log('hitted')
+    const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/getFlowersLTSixty').then(res=> res.json())
+    return  response
+  }
+)
+//posting happy moments
+export const PostMoments = createAsyncThunk(
+  'flowers/postMoments',
+  async (fd) => {
 
+    const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/postMoments',{
+      method: 'POST',
+      body: fd
+    }).then(res=> res.json())
+    return  response
+  }
+)
+
+//geting happy moments
+export const GetMoments = createAsyncThunk(
+  'flowers/getMoments',
+  async () => {
+      console.log('hitted')
+    const response = await fetch('http://localhost:5000/getMoments').then(res=> res.json())
+    return  response;
+   
+  }
+)
 
 export const FlowerSlice = createSlice({
   name: 'Flowers',
@@ -176,6 +205,8 @@ export const FlowerSlice = createSlice({
     paymentstatus: [],
     orders: [],
     ocassions: [],
+    ltsixty: [],
+    moments: []
   },
   reducers: {
     increment: (state, {payload}) => {
@@ -259,6 +290,19 @@ export const FlowerSlice = createSlice({
     })
     builder.addCase(SeasonalCategory.fulfilled, (state, action) => {
       state.ocassions = action.payload
+    })
+    builder.addCase(GetFlowersLTSixty.fulfilled, (state, action) => {
+      state.ltsixty = action.payload
+    })
+    builder.addCase(PostMoments.fulfilled, (state, action) => {
+      Swal.fire(
+        'Moments Posted SuccessFully',
+        '',
+        'success'
+      )
+    })
+    builder.addCase(GetMoments.fulfilled, (state, action) => {
+      state.moments = action.payload
     })
   }
 });

@@ -44,12 +44,21 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 .subscolam{
     height: 300px;
     width: 400px;
     background-color: white;
+}
+.undersixtyrow{
+    background-image: url('../../../asset/undersixty.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.momentsimg{
+    width: 350px;
+    height: 300px;
 }
 /*  */
 @media only screen and (max-width:688px) {
