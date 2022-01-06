@@ -187,7 +187,7 @@ export const GetMoments = createAsyncThunk(
   'flowers/getMoments',
   async () => {
       console.log('hitted')
-    const response = await fetch('http://localhost:5000/getMoments').then(res=> res.json())
+    const response = await fetch('https://sheltered-beyond-34155.herokuapp.com/getMoments').then(res=> res.json())
     return  response;
    
   }
@@ -197,7 +197,7 @@ export const CancelOrder = createAsyncThunk(
   'flowers/cancelOrder',
   async (id) => {
       console.log('hitted')
-    const response = await fetch(`http://localhost:5000/CancelOrder/${id}`,{
+    const response = await fetch(`https://sheltered-beyond-34155.herokuapp.com/CancelOrder/${id}`,{
       method: 'PUT'
     }).then(res=> res.json())
     return  response;

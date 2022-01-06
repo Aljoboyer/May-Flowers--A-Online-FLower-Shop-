@@ -33,7 +33,7 @@ const Details = () => {
     },[dispatch,id]);
 
     const flowers = useSelector((state) => state.flowers.allflowers);
-    const flower = flowers.find(f => f._id === id)
+    const flower = flowers?.find(f => f._id === id)
     const floweramount = useSelector((state) => state.flowers.orderfloweramount);
     const singletotal = useSelector((state) => state.flowers.singletotal);
    
@@ -50,7 +50,8 @@ const Details = () => {
     return (
         <div className="container-fluid">
             <Usernavbars></Usernavbars>
-            <Row className="justify-content-center">
+            {
+                flower.img ? <Row className="justify-content-center">
                 <h1 className='text-center hometitle my-4'>Flowers Details</h1>
                 <Col lg={7} md={6} sm={12}>
                     <Row className="justify-content-center">
@@ -112,8 +113,8 @@ const Details = () => {
                 </Col>
                 : <div className="spinner"></div>
                 }
-            </Row>
-
+            </Row> : <div className="spinner"></div>
+            }
             <Detailsslider></Detailsslider>
         </div>
     );
