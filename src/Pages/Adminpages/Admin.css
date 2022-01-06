@@ -14,3 +14,18 @@
 .adminside{
     border: solid 3px #710a20;
 }
+.admin-sidebar{
+    position: fixed;
+}
+.admin-dataside{
+    margin-left: 200px;
+}
+
+@media only screen and (max-width:688px) {
+    .admin-sidebar{
+        display: none;
+    }
+    .admin-dataside{
+        margin-left: 0px;
+    }
+}

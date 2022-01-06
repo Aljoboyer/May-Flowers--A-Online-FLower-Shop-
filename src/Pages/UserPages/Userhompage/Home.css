@@ -60,7 +60,22 @@
     width: 350px;
     height: 300px;
 }
-/*  */
+.undersixtybtn{
+    background-color: #0a7256;
+    color: white;
+    padding: 15px 50px 15px 50px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.passionateText{
+    font-family: 'Charm', cursive;
+    color: #710a20;
+}
+.passionatebtn{
+    background-color: #710a20;
+    color: white;
+}
 @media only screen and (max-width:688px) {
     .homerow{
         background-image: url('../../../asset/home-bg.jpg');
@@ -87,6 +102,14 @@
     .undersixty{
         background-color: white;
         width: 500px;
-        height: 450px;
+        height: 490px;
+    }
+    .undersixtybtn{
+        background-color: #0a7256;
+        color: white;
+        padding: 10px;
+        margin-top: 0px;
+        font-size: 15px;
+        font-weight: bold;
     }
 }

@@ -24,7 +24,7 @@ const Manageorders = () => {
             <th>Flower Amount</th>
             <th>Delivery Date</th>
             <th>Location</th>
-
+            <th>Action</th>
             </tr>
         </thead>
         <tbody>

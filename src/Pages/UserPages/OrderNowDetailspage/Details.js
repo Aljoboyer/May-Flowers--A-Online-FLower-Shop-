@@ -13,11 +13,11 @@ const Details = () => {
     const [formdata, setFormdata] = useState({});
     const [deliverydate, setDeliverydate] = useState(new Date())
     const dispatch = useDispatch();
-
+    const status = 'pending'
     const DateBlurHandler = e => {
         const dat = e.target.value
-        // const newdat = dat.toLocaleDateString()
-        setDeliverydate(dat)
+        const newdat = dat.toLocaleDateString()
+        setDeliverydate(newdat)
     }
     const onblurHandler = e => {
         const fieldname = e.target.name;
@@ -28,17 +28,17 @@ const Details = () => {
         setFormdata(newdata)
     }
 
-
-    useEffect(() => {
+        useEffect(() => {
             dispatch(GetFlowerByid(id))
     },[dispatch,id]);
 
-    const flower = useSelector((state) => state.flowers.flowerbyid);
+    const flowers = useSelector((state) => state.flowers.allflowers);
+    const flower = flowers.find(f => f._id === id)
     const floweramount = useSelector((state) => state.flowers.orderfloweramount);
     const singletotal = useSelector((state) => state.flowers.singletotal);
    
     const AddtocartHandler = () => {
-        const deliverydata = {...formdata, email: user.email, deliverydate, flowerimg: flower.img, floweramount, singletotal, flowername: flower.flowername};
+        const deliverydata = {...formdata, email: user.email, deliverydate, flowerimg: flower.img, floweramount, singletotal, flowername: flower.flowername, status};
         if(deliverydata.email)
         {
             dispatch(AddToCart(deliverydata));
@@ -46,6 +46,7 @@ const Details = () => {
         }
        
     }
+
     return (
         <div className="container-fluid">
             <Usernavbars></Usernavbars>

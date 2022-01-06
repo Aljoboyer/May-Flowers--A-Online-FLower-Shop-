@@ -10,10 +10,10 @@ const Dashboard = () => {
         <div className="container-fluid">
             <Dashboardnavbar></Dashboardnavbar>
             <Row>
-                <Col lg={2}>
+                <Col className='admin-sidebar mt-4' lg={2}>
                     <Dashboardsidebar></Dashboardsidebar>
                 </Col>
-                <Col lg={10} md={12} sm={12}>
+                <Col className='admin-dataside' lg={10} md={12} sm={12}>
                     <Outlet/>
                 </Col>
             </Row>

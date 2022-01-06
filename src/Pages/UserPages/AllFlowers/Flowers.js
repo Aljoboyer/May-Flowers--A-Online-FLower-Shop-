@@ -52,7 +52,7 @@ const Flowers = () => {
     },[dispatch])
     const allflower = useSelector((state) => state.flowers.allflowers);
     const flowers = allflower.slice(0,6)
-
+    console.log(allflower)
     return (
         <Row className="container-fluid justify-content-center my-4">
             <Slider {...settings}>

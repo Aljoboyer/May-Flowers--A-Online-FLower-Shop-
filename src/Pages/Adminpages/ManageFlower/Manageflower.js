@@ -30,8 +30,6 @@ console.log(flowers)
                 setDemo(flowers)
             }
           })
-
-
     }
     return (
         <Row className='gap-1 justify-content-center gy-2'>

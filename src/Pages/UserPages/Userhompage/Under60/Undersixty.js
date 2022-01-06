@@ -12,7 +12,7 @@ const Undersixty = () => {
                <div className='undersixty p-4'>
                 <h1 className='hometitle'>Another Year Around the Sun</h1>
                 <h5 className='my-4'>Styles that take the cake! Surprise family and friends with bday blooms</h5>
-                <Link to="/lessthensixty"><button className='btn regularbtn p-2 fs-5'>SHOP UNDER $60</button></Link>
+                <Link to="/lessthensixty"><button className='btn undersixtybtn'>SHOP UNDER $60</button></Link>
                </div>
            </Col>
        </Row>

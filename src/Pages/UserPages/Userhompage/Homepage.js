@@ -6,6 +6,7 @@ import Landaues from '../Landaues/Landaues';
 import Usernavbars from '../Usernavbars/Usernavbars';
 import FLowersubscription from './FLowersubscription/FLowersubscription';
 import './Home.css'
+import PassionateFlorist from './PassionateFlorist/PassionateFlorist';
 import Undersixty from './Under60/Undersixty';
 const Homepage = () => {
 
@@ -29,6 +30,7 @@ const Homepage = () => {
             <Flowers></Flowers>
             <Undersixty></Undersixty>
             <Landaues></Landaues>
+            <PassionateFlorist></PassionateFlorist>
             <Displaymoments></Displaymoments>
         </div>
     );

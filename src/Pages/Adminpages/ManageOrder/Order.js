@@ -11,6 +11,7 @@ const Order = ({order}) => {
         <td>{order.floweramount}</td>
         <td>{order.deliverydate}</td>
         <td>{order.location}</td>
+        <td><button className='btn regularbtn'>APPROVED</button></td>
         </tr>
     );
 };

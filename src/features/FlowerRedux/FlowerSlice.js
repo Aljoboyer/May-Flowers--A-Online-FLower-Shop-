@@ -192,6 +192,18 @@ export const GetMoments = createAsyncThunk(
    
   }
 )
+//geting happy moments
+export const CancelOrder = createAsyncThunk(
+  'flowers/cancelOrder',
+  async (id) => {
+      console.log('hitted')
+    const response = await fetch(`http://localhost:5000/CancelOrder/${id}`,{
+      method: 'PUT'
+    }).then(res=> res.json())
+    return  response;
+   
+  }
+)
 
 export const FlowerSlice = createSlice({
   name: 'Flowers',
@@ -303,6 +315,13 @@ export const FlowerSlice = createSlice({
     })
     builder.addCase(GetMoments.fulfilled, (state, action) => {
       state.moments = action.payload
+    })
+    builder.addCase(CancelOrder.fulfilled, (state, action) => {
+      Swal.fire(
+        'Order Cancel SuccessFully',
+        '',
+        'success'
+      )
     })
   }
 });
